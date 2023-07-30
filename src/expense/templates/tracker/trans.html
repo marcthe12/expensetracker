@@ -1,9 +1,10 @@
 {% from 'macros.html' import label_field %}
 {% extends 'base.html' %}
 
+{% block title %}Edit Entry{% endblock %}
+
 {% block content %}
 <form method="post">
-  <h2>Edit Entry</h2>
   {{ form.hidden_tag() }}
   {{ label_field(form.date) }}
   {{ label_field(form.category) }}

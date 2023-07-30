@@ -36,7 +36,6 @@ def trans(id: int) -> Union[str, Response]:
         amount=expense.amount,
         category_id=expense.category.id,
     )
-    form.category.choices = [(cat.id, cat.name) for cat in current_user.categories]  # type: ignore
     if form.validate_on_submit():
         if form.delete.data:
             db.session.delete(expense)

@@ -14,6 +14,7 @@ nav {
     background: rgb(117, 117, 117);
     display: flex;
     align-items: center;
+    padding: 0 3rem;
 }
 
 nav>h1 {

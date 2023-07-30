@@ -76,5 +76,4 @@ def register() -> Union[str, Response]:
         db.session.commit()
         login_user(user)
         return redirect(url_for("index"))
-    print(form.confirm.errors)
     return render_template("auth/register.html", form=form)

@@ -6,7 +6,7 @@ dependencies = [
     "Flask",
     "Flask-SQLAlchemy @ git+https://github.com/pamelafox/flask-sqlalchemy.git@mixin-three",
     "Flask-WTF",
-    "Flask-Login"
+    "Flask-Login",
 ]
 
 [build-system]

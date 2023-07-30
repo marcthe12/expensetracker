@@ -81,8 +81,8 @@ function createGraphs(root, data, labels) {
     root.append(graphBar)
     graphBar.style.display = "grid"
     graphBar.style.gridAutoFlow = "column"
-    pieChart(graphBar, group_cat(data.filter(({ amount }) => amount < 0), labels), "Inflow")
-    pieChart(graphBar, group_cat(data.filter(({ amount }) => amount > 0), labels), "Outflow")
+    pieChart(graphBar, group_cat(data.filter(({ amount }) => amount < 0), labels), "Outflow")
+    pieChart(graphBar, group_cat(data.filter(({ amount }) => amount > 0), labels), "Inflow")
 }
 
 /**

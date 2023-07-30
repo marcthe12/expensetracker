@@ -26,7 +26,7 @@ class User(db.Model, UserMixin):
         init=False,
     )
     categories: Mapped[List["Category"]] = relationship(
-        secondary=user_category, init=False
+        secondary=user_category, init=False,
     )
 
 
@@ -44,7 +44,7 @@ class Expense(db.Model):
     date: Mapped[datetime.date] = mapped_column()
     amount: Mapped[float] = mapped_column(Float(2))
     category_id: Mapped[int] = mapped_column(ForeignKey("category.id"), init=False)
-    category: Mapped[Category] = relationship(cascade="all, delete")
+    category: Mapped[Category] = relationship()
     description: Mapped[str] = mapped_column(Text(), default="")
 
 

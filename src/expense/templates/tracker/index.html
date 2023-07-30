@@ -1,9 +1,7 @@
 {% from 'macros.html' import expense_table %}
 {% extends 'base.html' %}
 
-{% block header %}
-<h2>Summary</h2>
-{% endblock %}
+{% block title %}Summary{% endblock %}
 
 {% block content %}
 <script src="{{ url_for('static', filename='script.js') }}" type="module"></script>

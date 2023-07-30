@@ -23,7 +23,7 @@
           <td><a href="{{ url_for("tracker.trans", id=row.id ) }}">Edit</a></td>
           <td><time datetime="{{ row.date.strftime("%Y-%m-%d") }}">{{ row.date.strftime("%d/%m/%Y") }}<time></td>
           <td><a href="{{ url_for("tracker.cat", id=row.category.id ) }}">{{ row.category.name }}</a></td>
-          <td>{{ row.description }}</td>
+          <td style="white-space: pre-wrap;min-width: 30rem;">{{ row.description }}</td>
           <td>{{ "%.2f"|format(row.amount) }}</td>
       </tr>
     {% endfor %}
