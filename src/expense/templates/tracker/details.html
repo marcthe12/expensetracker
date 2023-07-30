@@ -1,0 +1,10 @@
+{% from 'macros.html' import expense_table %}
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2>Details</h2>
+{% endblock%}
+
+{% block content %}
+  {{ expense_table(current_user.expenses, total[0]) }}
+{% endblock %}

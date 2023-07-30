@@ -1,0 +1,17 @@
+{% from 'macros.html' import label_field %}
+{% extends 'base.html' %}
+
+{% block header %}
+<h2>Create New Entry</h2>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {{ form.hidden_tag() }}
+  {{ label_field(form.date) }}
+  {{ label_field(form.category) }}
+  {{ label_field(form.description) }}
+  {{ label_field(form.amount) }}
+  {{ form.submit }}
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% from 'macros.html' import label_field %}
+{% extends 'base.html' %}
+
+{% block header %}
+<h2>{% block title %}Delete the Account. This is non reversable{% endblock %}</h2>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {{ form.hidden_tag() }}
+  {{ form.submit }}
+</form>
+{% endblock %}

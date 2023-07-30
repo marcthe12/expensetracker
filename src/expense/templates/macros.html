@@ -1,0 +1,36 @@
+{% macro label_field(label) -%}
+{% for error in label.errors %}
+<span>{{ error }}</span>
+{% endfor %}
+{{ label.label }}
+{{ label() }}
+{%- endmacro %}
+
+{% macro expense_table(data, total) -%}
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+      <tr>
+          <td><a href="{{ url_for("tracker.trans", id=row.id ) }}">Edit</a></td>
+          <td><time datetime="{{ row.date.strftime("%Y-%m-%d") }}">{{ row.date.strftime("%d/%m/%Y") }}<time></td>
+          <td><a href="{{ url_for("tracker.cat", id=row.category.id ) }}">{{ row.category.name }}</a></td>
+          <td>{{ row.description }}</td>
+          <td>{{ "%.2f"|format(row.amount) }}</td>
+      </tr>
+    {% endfor %}
+      <tfoot>
+          <td colspan="4">Overall</td>
+          <td>{{ "%.2f"|format(total) }}</td>
+      </tfoot>
+  </tbody>
+</table>
+{%- endmacro %}

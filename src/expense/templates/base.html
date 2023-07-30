@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}{% endblock %} - Expense</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js"
+    integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Expense Tracker</h1>
+      {% if current_user.is_authenticated %}
+      <div class="dropdown">
+        <span>Manage</span>
+        <div class="content">
+          <a href="{{ url_for('index') }}">Summary</a>
+          <a href="{{ url_for('tracker.details') }}">Details</a>
+          <a href="{{ url_for('tracker.create') }}">Insert Entry</a>
+          <a href="{{ url_for('tracker.category') }}">Manage Category</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>{{ current_user.name }}</span>
+        <div class="content">
+          <a href="{{ url_for('auth.delete') }}">Delete Account</a>
+          <a href="{{ url_for('auth.logout') }}">Log Out</a>
+        </div>
+      </div>
+      {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <a href="{{ url_for('auth.login') }}">Log In</a>
+      {% endif %}
+    </nav>
+  </header>
+  <main>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

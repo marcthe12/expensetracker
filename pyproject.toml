@@ -1,0 +1,17 @@
+[project]
+name = "expense"
+version = "1.0.0"
+description = "An Expense Tracker"
+dependencies = [
+    "Flask",
+    "Flask-SQLAlchemy @ git+https://github.com/pamelafox/flask-sqlalchemy.git@mixin-three",
+    "Flask-WTF",
+    "Flask-Login"
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+
+[project.scripts]
+expense = "expense.__main__:cli"

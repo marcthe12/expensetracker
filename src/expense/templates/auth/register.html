@@ -1,0 +1,16 @@
+{% from 'macros.html' import label_field %}
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {{ form.hidden_tag() }}
+  {{ label_field(form.username) }}
+  {{ label_field(form.password) }}
+  {{ label_field(form.confirm) }}
+  {{ form.submit }}
+</form>
+{% endblock %}

@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light dark;
+    width: 100dvw;
+    margin: auto;
+}
+
+nav {
+    background: rgb(117, 117, 117);
+    display: flex;
+    align-items: center;
+}
+
+nav>h1 {
+    flex: auto;
+}
+
+nav>* {
+    display: inline;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.content {
+    background: rgb(117, 117, 117);
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 10rem;
+}
+
+nav :is(span, a):hover {
+    font-style: italic;
+}
+
+.dropdown {
+    position: relative;
+    display: inline;
+}
+
+.dropdown>span {
+    display: block;
+    height: 100%;
+    padding: 0 0.5rem;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+.content>* {
+    display: block;
+    padding: 0.5rem;
+    width: 100%;
+    overflow: auto;
+}
+
+nav *:any-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+form {
+    display: grid;
+    grid-gap: 2rem;
+    margin: auto;
+    width: max-content;
+}
+
+form>label {
+    grid-column: 1;
+}
+
+form>* {
+    grid-column: 2;
+    width: auto;
+}
+
+form>button,
+form>input[type="submit"] {
+    width: max-content;
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+thead th,
+tfoot th,
+tfoot td {
+    background: rgb(117, 117, 117);
+    border: 3px solid;
+}
+
+th,
+td {
+    padding: 1.5rem;
+    border: 1px solid;
+}
+
+h1 {
+    font-size: xxx-large;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+main {
+    margin: 0 auto;
+    width: fit-content
+}
+
+.button-group>* {
+    margin: 0 1rem;
+}
+
+textarea {
+    min-height: 10rem;
+}

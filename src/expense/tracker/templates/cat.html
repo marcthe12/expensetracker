@@ -1,0 +1,8 @@
+{% from 'macros.html' import expense_table %}
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>{{ category.name }}</h2>
+{{ expense_table(table, total[0]) }}
+{% endblock %}

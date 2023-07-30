@@ -1,0 +1,16 @@
+{% from 'macros.html' import label_field %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Manage Categories</h2>
+<form method="post">
+  <div>
+  {{ form.hidden_tag() }}
+  {% for cat in current_user.categories %}
+  <p>{{ cat.name }}</p>
+  {% endfor %}
+  </div>
+  {{ label_field(form.category) }}
+  {{ form.submit }}
+</form>
+{% endblock %}
